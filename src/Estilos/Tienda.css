@@ -50,13 +50,12 @@ nav ul li a {
 .button1 {
   display: inline-block;
   padding: 10px 15px;
-  font-weight: 750;
+  font-weight: 650;
   font-family: Arial, Helvetica, sans-serif;
 
   color: rgba(255, 255, 255, 0.795);
-  margin-inline-start: 15rem;
+  margin-inline-start: 7rem;
 
-  border-radius: 5px;
   font-size: 16px;
   text-align: center;
   border: none;
@@ -89,6 +88,78 @@ nav ul li a {
 
 .button2:hover {
   background-color: #030303;
+}
+
+/* Estilos para el botón del carrito */
+.cart-button {
+  position: relative;
+  top: 0;
+  margin: 35px;
+  left: 20px;
+
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilos del carrito */
+.cart-container {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #f8f9fa;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-container.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-header h2 {
+  margin: 0;
+}
+
+.cart-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto; /* Permite la barra desplazante */
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 5px;
+  font-weight: bold;
 }
 
 #Principal {

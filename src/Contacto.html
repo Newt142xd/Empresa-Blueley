@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="Estilos/Contacto.css"
+    />
+    <script src="Dinamismo/Contacto.js"></script>
+  </head>
+  <body>
+    <button class="cart-button" onclick="toggleCart()">Carrito (0)</button>
+
+    <div class="cart-container" id="cart">
+      <div class="cart-header">
+        <h2>Carrito</h2>
+        <button onclick="toggleCart()">×</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <!-- Productos del carrito -->
+      </div>
+      <div class="cart-footer">Total: $<span id="cart-total">0.00</span></div>
+    </div>
+
+    <div class="product" data-id="1" data-name="Producto 1" data-price="10.00">
+      <h3>Producto 1</h3>
+      <p>Precio: $10.00</p>
+      <button onclick="addToCartFromPage(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="product" data-id="2" data-name="Producto 2" data-price="15.00">
+      <h3>Producto 2</h3>
+      <p>Precio: $15.00</p>
+      <button onclick="addToCartFromPage(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="product" data-id="3" data-name="Producto 3" data-price="20.00">
+      <h3>Producto 3</h3>
+      <p>Precio: $20.00</p>
+      <button onclick="addToCartFromPage(this)">Agregar al carrito</button>
+    </div>
+  </body>
+</html>
