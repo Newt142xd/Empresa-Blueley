@@ -13,6 +13,7 @@
       media="screen"
       href="Estilos/Tienda.css"
     />
+  
     <link rel="icon" href="img/Bluley logo.jpg" />
     <script src="Dinamismo/Tienda.js"></script>
   </head>
@@ -55,17 +56,22 @@
           alt="Producto 1"
           class="product-image"
         />
+        <form action="Comprar_ahora.php" method="post">
         <h2 class="product-title">Producto 1</h2>
         <p class="product-description">Descripción del producto 1.</p>
-        <span class="product-price">$29.99</span>
-        <button class="buy-button">Comprar ahora</button>
+        <spanclass="product-price">$29.99</span>
+        <button  class="buy-button" name="Cantidad">Comprar ahora</button>
       </div>
+    </form>
       <div class="product-card">
         <img src="img/La esponja .jpg" alt="Producto 2" class="product-image" />
         <h2 class="product-title">Producto 2</h2>
-        <p class="product-description">Descripción del producto 2.</p>
+        <p class="product-description" >Descripción del producto 2.</p>
         <span class="product-price">$39.99</span>
-        <button class="buy-button">Comprar ahora</button>
+       
+          <button class="buy-button">Comprar ahora</button>
+    
+       
       </div>
     </div>
 
