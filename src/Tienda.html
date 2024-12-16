@@ -32,8 +32,11 @@
         </ul>
       </nav>
       <button class="button1">Registrate</button>
-      <button class="button2">Iniciar Sesion</button>
-     
+      <form action="Login.php" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+      <button type="submit" class="button2">Iniciar Sesion</button>
+      </form>
       <button class="cart-button" onclick="toggleCart()">Carrito (0)</button>
       <div class="cart-container" id="cart">
         <div class="cart-header">
@@ -49,6 +52,7 @@
    
 
     <h1 class="Titulo">Rostro</h1>
+    <form action="Comprar_ahora.php">
     <div class="product-row">
       <div class="product-card">
         <img
@@ -59,9 +63,10 @@
         <form action="Comprar_ahora.php" method="post">
         <h2 class="product-title">Producto 1</h2>
         <p class="product-description">Descripción del producto 1.</p>
-        <spanclass="product-price">$29.99</span>
+        <span class="product-price">$29.99</span>
         <button  class="buy-button" name="Cantidad">Comprar ahora</button>
       </div>
+    </form>
     </form>
       <div class="product-card">
         <img src="img/La esponja .jpg" alt="Producto 2" class="product-image" />

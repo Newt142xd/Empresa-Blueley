@@ -1,43 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="Estilos/Contacto.css"
-    />
-    <script src="Dinamismo/Contacto.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
   </head>
   <body>
-    <!-- Cabecera -->
-    <header class="Cabecera">
-      <a href="#" class="logo"> <img src="img/Bluley logo.jpg" /></a>
-      <nav>
-        <ul>
-          <li>
-            <a href="Index.html" class="link">Inicio</a>
-          </li>
+    <nav>
+      <a href="index.php">Inicio</a>
+      <a href="about.php">Acerca de</a>
+    </nav>
 
-          <li><a href="Tienda.html">Tienda</a></li>
-          <li><a href="Contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-      <form method="POST" action="procesar.php">
-        <button type="submit" name="accion" value="guardar">Guardar</button>
-        <button type="submit" name="accion" value="eliminar">Eliminar</button>
-      </form>
-    </header>
-
-    <video muted autoplay loop>
-      <source
-        src="Video/coverr-putting-makeup-on-3918-1080p.mp4"
-        type="video/mp4"
-      />
-    </video>
+    <form action="avance.php" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+      <button type="submit">Enviar</button>
+    </form>
   </body>
 </html>
