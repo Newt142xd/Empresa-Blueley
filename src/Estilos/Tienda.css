@@ -47,7 +47,7 @@ nav ul li a {
   transition: background-color 0.3s;
 }
 
-.button1 {
+.Button1 {
   display: inline-block;
   padding: 10px 15px;
   font-weight: 650;
@@ -79,8 +79,7 @@ nav ul li a {
 
   border-radius: 10rem;
   font-size: 16px;
-  text-align: center;
-  border: none;
+
   cursor: pointer;
   background-color: rgba(9, 145, 145, 0.952);
   border: 2px solid #000000; /* Grosor, estilo y color */
