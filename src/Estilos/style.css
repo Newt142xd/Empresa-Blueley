@@ -47,7 +47,7 @@ nav ul li a {
   transition: background-color 0.3s;
 }
 
-.button1 {
+.Button1 {
   display: inline-block;
   padding: 10px 15px;
   font-weight: 750;
@@ -55,7 +55,7 @@ nav ul li a {
 
   color: rgba(255, 255, 255, 0.795);
   margin-inline-start: 15rem;
-
+  text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
@@ -66,18 +66,18 @@ nav ul li a {
   border: 2px solid #000000; /* Grosor, estilo y color */
 }
 
-.button1:hover {
+.Button1:hover {
   background-color: #030303;
 }
 
-.button2 {
+.Button2 {
   display: grid;
   padding: 10px 15px;
   font-weight: 750;
   font-family: Arial, Helvetica, sans-serif;
   margin: 20px;
   color: rgba(255, 255, 255, 0.795);
-
+  text-decoration: none;
   border-radius: 10rem;
   font-size: 16px;
   text-align: center;
@@ -87,7 +87,7 @@ nav ul li a {
   border: 2px solid #000000; /* Grosor, estilo y color */
 }
 
-.button2:hover {
+.Button2:hover {
   background-color: #030303;
 }
 

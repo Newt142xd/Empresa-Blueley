@@ -1,90 +1,125 @@
-const cart = []; // Array para almacenar productos
-const cartItemsContainer = document.getElementById("cart-items");
-const cartTotalElement = document.getElementById("cart-total");
-const cartButton = document.querySelector(".cart-button");
+const btnCart = document.querySelector(".container-cart-icon");
+const containerCartProducts = document.querySelector(
+  ".container-cart-products"
+);
 
-// Función para agregar productos al carrito
-function addToCartFromPage(button) {
-  // Obtener datos del producto desde los atributos HTML
-  const productElement = button.closest(".product");
-  const productId = productElement.getAttribute("data-id");
-  const productName = productElement.getAttribute("data-name");
-  const productPrice = parseFloat(productElement.getAttribute("data-price"));
+btnCart.addEventListener("click", () => {
+  containerCartProducts.classList.toggle("hidden-cart");
+});
 
-  // Buscar si el producto ya está en el carrito
-  const existingProduct = cart.find((item) => item.id === productId);
-  if (existingProduct) {
-    existingProduct.quantity++;
-  } else {
-    cart.push({
-      id: productId,
-      name: productName,
-      price: productPrice,
+/* ========================= */
+const cartInfo = document.querySelector(".cart-product");
+const rowProduct = document.querySelector(".row-product");
+
+// Lista de todos los contenedores de productos
+const productsList = document.querySelector(".container-items");
+
+// Variable de arreglos de Productos
+let allProducts = [];
+
+const valorTotal = document.querySelector(".total-pagar");
+
+const countProducts = document.querySelector("#contador-productos");
+
+const cartEmpty = document.querySelector(".cart-empty");
+const cartTotal = document.querySelector(".cart-total");
+
+productsList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-add-cart")) {
+    const product = e.target.parentElement;
+
+    const infoProduct = {
       quantity: 1,
-    });
+      title: product.querySelector("h2").textContent,
+      price: product.querySelector("p").textContent,
+    };
+
+    const exits = allProducts.some(
+      (product) => product.title === infoProduct.title
+    );
+
+    if (exits) {
+      const products = allProducts.map((product) => {
+        if (product.title === infoProduct.title) {
+          product.quantity++;
+          return product;
+        } else {
+          return product;
+        }
+      });
+      allProducts = [...products];
+    } else {
+      allProducts = [...allProducts, infoProduct];
+    }
+
+    showHTML();
+  }
+});
+
+rowProduct.addEventListener("click", (e) => {
+  if (e.target.classList.contains("icon-close")) {
+    const product = e.target.parentElement;
+    const title = product.querySelector("p").textContent;
+
+    allProducts = allProducts.filter((product) => product.title !== title);
+
+    console.log(allProducts);
+
+    showHTML();
+  }
+});
+
+// Funcion para mostrar  HTML
+const showHTML = () => {
+  if (!allProducts.length) {
+    cartEmpty.classList.remove("hidden");
+    rowProduct.classList.add("hidden");
+    cartTotal.classList.add("hidden");
+  } else {
+    cartEmpty.classList.add("hidden");
+    rowProduct.classList.remove("hidden");
+    cartTotal.classList.remove("hidden");
   }
 
-  updateCart();
-}
-
-// Función para actualizar el carrito
-function updateCart() {
-  // Limpiar el contenedor actual
-  cartItemsContainer.innerHTML = "";
+  // Limpiar HTML
+  rowProduct.innerHTML = "";
 
   let total = 0;
+  let totalOfProducts = 0;
 
-  // Crear los elementos del carrito
-  cart.forEach((item) => {
-    total += item.price * item.quantity;
+  allProducts.forEach((product) => {
+    const containerProduct = document.createElement("div");
+    containerProduct.classList.add("cart-product");
 
-    const cartItem = document.createElement("div");
-    cartItem.classList.add("cart-item");
-    cartItem.innerHTML = `
-        <span>${item.name} (x${item.quantity})</span>
-        <span>$${(item.price * item.quantity).toFixed(2)}</span>
-      `;
-    cartItemsContainer.appendChild(cartItem);
+    containerProduct.innerHTML = `
+            <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">${product.quantity}</span>
+                <p class="titulo-producto-carrito">${product.title}</p>
+                <span class="precio-producto-carrito">${product.price}</span>
+            </div>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        `;
+
+    rowProduct.append(containerProduct);
+
+    const precio = parseFloat(product.price.replace("$", ""));
+    total = total + product.quantity * precio;
+    totalOfProducts = totalOfProducts + product.quantity;
   });
 
-  // Actualizar el total y el contador en el botón
-  cartTotalElement.textContent = total.toFixed(2);
-  cartButton.textContent = `Carrito (${cart.reduce(
-    (sum, item) => sum + item.quantity,
-    0
-  )})`;
-}
-
-function toggleCart() {
-  const cartContainer = document.getElementById("cart");
-  cartContainer.classList.toggle("open");
-}
-
-function removeFromCart(productId) {
-  const productIndex = cart.findIndex((item) => item.id === productId);
-  if (productIndex > -1) {
-    cart.splice(productIndex, 1); // Elimina el producto del carrito
-  }
-  updateCart();
-}
-
-cartItem.innerHTML = `
-  <span>${item.name} (x${item.quantity})</span>
-  <span>$${(item.price * item.quantity).toFixed(2)}</span>
-  <button onclick="removeFromCart('${item.id}')">Eliminar</button>
-`;
-
-// Guardar carrito en localStorage
-function saveCartToLocalStorage() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-// Cargar carrito desde localStorage
-function loadCartFromLocalStorage() {
-  const storedCart = localStorage.getItem("cart");
-  if (storedCart) {
-    const parsedCart = JSON.parse(storedCart);
-    cart.push(...parsedCart);
-    updateCart();
-  }
-}
+  valorTotal.innerText = `$${total.toFixed(3)}`;
+  countProducts.innerText = totalOfProducts;
+};
