@@ -123,3 +123,35 @@ const showHTML = () => {
   valorTotal.innerText = `$${total.toFixed(3)}`;
   countProducts.innerText = totalOfProducts;
 };
+
+// Agregar al inicio del archivo
+document.addEventListener("DOMContentLoaded", () => {
+  const nombreUsuario = localStorage.getItem("nombreUsuario");
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  // Suponiendo que tienes un elemento para mostrar el nombre del usuario
+  const userNameElement = document.querySelector(".user-name");
+  const loginButtons = document.querySelector(".login-buttons");
+
+  if (isLoggedIn && nombreUsuario) {
+    // Mostrar nombre del usuario
+    userNameElement.textContent = `¡Bienvenido, ${nombreUsuario}!`;
+    userNameElement.style.display = "block";
+
+    // Ocultar botones de login/registro si existen
+    if (loginButtons) {
+      loginButtons.style.display = "none";
+    }
+
+    // Agregar botón de cerrar sesión
+    const logoutButton = document.createElement("button");
+    logoutButton.textContent = "Cerrar Sesión";
+    logoutButton.classList.add("logout-button");
+    logoutButton.addEventListener("click", () => {
+      localStorage.removeItem("nombreUsuario");
+      localStorage.removeItem("isLoggedIn");
+      window.location.reload();
+    });
+    userNameElement.appendChild(logoutButton);
+  }
+});
