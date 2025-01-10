@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Tienda - Blueley</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="Estilos/Tienda.css"
+    />
+
+    <link rel="icon" href="img/Bluley logo.jpg" />
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <header class="Cabecera">
+      <a href="#" class="logo"> <img src="img/Bluley logo.jpg" /></a>
+      <nav>
+        <ul>
+          <li>
+            <a href="Index.html" class="link">Inicio</a>
+          </li>
+
+          <li><a href="Tienda.html">Tienda</a></li>
+          <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="Registrarse.html" class="Button1">Registrarse</a>
+
+      <a href="InicioSecion.html" class="Button2">Iniciar Sesion</a>
+
+      <div class="container-icon">
+        <div class="container-cart-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon-cart"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+            />
+          </svg>
+          <div class="count-products">
+            <span id="contador-productos">0</span>
+          </div>
+        </div>
+
+        <div class="container-cart-products hidden-cart">
+          <div class="row-product hidden">
+            <div class="cart-product">
+              <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">1</span>
+                <p class="titulo-producto-carrito">Zapatos Nike</p>
+                <span class="precio-producto-carrito">$80.000</span>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="cart-total hidden">
+            <h3>Total:</h3>
+            <span class="total-pagar">$200.000</span>
+          </div>
+          <p class="cart-empty">El carrito está vacío</p>
+        </div>
+      </div>
+    </header>
+    <h1 class="Titulo">Rostro</h1>
+    <div class="container-items">
+      <div class="item">
+        <figure>
+          <img src="img/Crema de Bioa.jpg" alt="producto" />
+        </figure>
+        <div class="info-product">
+          <h2>Zapatos Nike</h2>
+          <p class="price">$80.000</p>
+          <button class="BotonCompras">Comprar Ahora</button>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img src="img/La esponja .jpg" alt="producto" />
+        </figure>
+        <div class="info-product">
+          <h2>Audifonos</h2>
+          <p class="price">$20.000</p>
+          <button class="BotonCompras">Comprar Ahora</button>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img src="img/Brochas.jpg" alt="producto" />
+        </figure>
+        <div class="info-product">
+          <h2>Reloj</h2>
+          <p class="price">$50.000</p>
+          <button class="BotonCompras">Comprar Ahora</button>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+
+      <div class="item">
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Smartwatch</h2>
+          <p class="price">$90.000</p>
+          <button class="BotonCompras">Comprar Ahora</button>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Perfume</h2>
+          <p class="price">$50.000</p>
+          <button class="BotonCompras">Comprar Ahora</button>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer"></footer>
+    <script src="Dinamismo/Tienda.js"></script>
+  </body>
+</html>
