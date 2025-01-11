@@ -22,13 +22,12 @@ header {
 
 nav {
   display: grid;
-  display: flex; /* Activa Flexbox */
+
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente si es necesario */
   height: 100px; /* Ajusta según el diseño */
   margin-left: 20rem;
 }
-
 
 nav ul {
   list-style: none;
@@ -39,12 +38,11 @@ nav ul {
 
 nav ul li a {
   display: block;
-
   text-decoration: none;
+
   padding: -0px 15px; /* Reducimos el padding */
   color: #000000;
   align-items: center;
-
   transition: background-color 0.3s;
 }
 
@@ -53,9 +51,8 @@ nav ul li a {
   padding: 10px 15px;
   font-weight: 750;
   font-family: Arial, Helvetica, sans-serif;
-
   color: rgba(255, 255, 255, 0.795);
-  margin-inline-start: 15rem;
+  margin-inline-start: 10rem;
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
@@ -149,7 +146,9 @@ nav ul li a {
 }
 
 img {
-  max-width: 100%;
+  margin-left: 5rem;
+  max-width: 60%;
+  height: auto;
 }
 
 .container-icon {
@@ -160,12 +159,10 @@ img {
   position: absolute;
   top: 55%;
   right: 0;
-
   background-color: #000;
   color: #fff;
   width: 25px;
   height: 25px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -254,7 +251,7 @@ img {
 .container-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 10px;
 }
 
 .item {
