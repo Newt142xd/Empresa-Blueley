@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
+    <title>Contacto - Blueley</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,6 +11,7 @@
       media="screen"
       href="Estilos/Contacto.css"
     />
+    <link rel="icon" href="img/Bluley logo.jpg" />
     <script src="main.js"></script>
   </head>
   <body>
@@ -40,15 +41,104 @@
       />
     </video>
 
-    <section>
-      <h3>Contactanos</h3>
-      <p>
-        Si quieres recibir mas informacion o tienes alguna inquietud sobre
-        nuestras promociones o dudas al momento de realizar tu compra no dudes
-        en contactarnos y te brindaremos una de las mejores anteciones
-      </p>
+    <title>Filtro de Categorías</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .categories {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .categories button {
+            padding: 10px;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        .categories button.active {
+            background-color: #555;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            display: none; /* Por defecto, oculto */
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Productos</h1>
 
-      <h1>Gracias por siempre preferir Blueley</h1>
+    <!-- Categorías -->
+    <div class="categories">
+        <button data-category="all" class="active">Todos</button>
+        <button data-category="electronics">Electrónica</button>
+        <button data-category="clothing">Ropa</button>
+        <button data-category="books">Libros</button>
+    </div>
+
+    <!-- Productos -->
+    <div class="products">
+        <div class="product" data-category="electronics">
+            <img src="tv.jpg" alt="Televisor">
+            <p>Televisor</p>
+        </div>
+        <div class="product" data-category="clothing">
+            <img src="shirt.jpg" alt="Camiseta">
+            <p>Camiseta</p>
+        </div>
+        <div class="product" data-category="books">
+            <img src="book.jpg" alt="Libro">
+            <p>Libro</p>
+        </div>
+        <div class="product" data-category="electronics">
+            <img src="phone.jpg" alt="Teléfono">
+            <p>Teléfono</p>
+        </div>
+        <div class="product" data-category="clothing">
+            <img src="pants.jpg" alt="Pantalones">
+            <p>Pantalones</p>
+        </div>
+    </div>
+
+    <script>
+        // Seleccionar botones y productos
+        const categoryButtons = document.querySelectorAll('.categories button');
+        const products = document.querySelectorAll('.product');
+
+        // Evento de clic para cada botón
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Eliminar clase activa de todos los botones
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Añadir clase activa al botón clicado
+                button.classList.add('active');
+
+                // Filtrar productos
+                const category = button.getAttribute('data-category');
+                products.forEach(product => {
+                    if (category === 'all' || product.getAttribute('data-category') === category) {
+                        product.style.display = 'block'; // Mostrar producto
+                    } else {
+                        product.style.display = 'none'; // Ocultar producto
+                    }
+                });
+            });
+        });
+    </script>
     </section>
   </body>
 </html>
