@@ -12,34 +12,38 @@
       href="Estilos/Contacto.css"
     />
     <link rel="icon" href="img/Bluley logo.jpg" />
-    <script src="main.js"></script>
+   
   </head>
   <body>
-    <!-- Cabecera -->
-    <header class="Cabecera">
-      <a href="#" class="logo"> <img src="img/Bluley logo.jpg" /></a>
-      <div class="user-name"></div>
-      <nav>
-        <ul>
-          <li>
-            <a href="Index.html" class="link">Inicio</a>
-          </li>
+   
 
-          <li><a href="Tienda.html">Tienda</a></li>
-          <li><a href="">Contacto</a></li>
-        </ul>
-      </nav>
+    <h1>Cards con Descripción Desplegable</h1>
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="imagen1.jpg" alt="Imagen 1" class="card-image">
+            <div class="card-header">
+                <h2>Card 1</h2>
+                <button class="toggle-btn">Ver más</button>
+            </div>
+            <div class="card-description">
+                <p>Esta es la descripción desplegable de la tarjeta 1. Aquí puedes incluir detalles adicionales.</p>
+            </div>
+        </div>
 
-      <a href="Registrarse.html" class="Button1">Registrarse</a>
-      <a href="InicioSecion.html" class="Button2">Iniciar Sesion</a>
-    </header>
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="imagen2.jpg" alt="Imagen 2" class="card-image">
+            <div class="card-header">
+                <h2>Card 2</h2>
+                <button class="toggle-btn">Ver más</button>
+            </div>
+            <div class="card-description">
+                <p>Esta es la descripción desplegable de la tarjeta 2. Agrega información específica aquí.</p>
+            </div>
+        </div>
+    </div>
 
-    <video muted autoplay loop>
-      <source
-        src="Video/coverr-putting-makeup-on-3918-1080p.mp4"
-        type="video/mp4"
-      />
-    </video>
 
     <title>Filtro de Categorías</title>
     <style>
@@ -113,32 +117,7 @@
             <p>Pantalones</p>
         </div>
     </div>
-
-    <script>
-        // Seleccionar botones y productos
-        const categoryButtons = document.querySelectorAll('.categories button');
-        const products = document.querySelectorAll('.product');
-
-        // Evento de clic para cada botón
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Eliminar clase activa de todos los botones
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                // Añadir clase activa al botón clicado
-                button.classList.add('active');
-
-                // Filtrar productos
-                const category = button.getAttribute('data-category');
-                products.forEach(product => {
-                    if (category === 'all' || product.getAttribute('data-category') === category) {
-                        product.style.display = 'block'; // Mostrar producto
-                    } else {
-                        product.style.display = 'none'; // Ocultar producto
-                    }
-                });
-            });
-        });
-    </script>
     </section>
+    <script src="Dinamismo/Contacto.js"> </script>
   </body>
 </html>

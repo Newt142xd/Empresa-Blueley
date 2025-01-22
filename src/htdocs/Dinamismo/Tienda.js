@@ -130,3 +130,17 @@ const showHTML = () => {
   valorTotal.innerText = `$${total.toFixed(3)}`;
   countProducts.innerText = totalOfProducts;
 };
+
+// Selecciona el botón de hamburguesa y el sidebar
+const hamburgerBtn = document.getElementById("hamburger-btn");
+const sidebar = document.getElementById("sidebar");
+const mainContent = document.querySelector(".main-content");
+
+// Evento para abrir/cerrar el sidebar
+hamburgerBtn.addEventListener("click", () => {
+  // Alterna la clase 'open' en el sidebar
+  sidebar.classList.toggle("open");
+
+  // Alterna la clase 'shift' en el contenido principal
+  mainContent.classList.toggle("shift");
+});
