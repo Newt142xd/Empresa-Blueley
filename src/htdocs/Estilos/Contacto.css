@@ -1,82 +1,178 @@
-body {
+* {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background-color: #fcfcfc;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
+header {
+  background-color: #f8f8f8;
 
-.card-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  align-items: center; /* Alinea verticalmente */
+
+  width: 80.6rem;
+  font-size: 16px;
+}
+
+.logo img {
+  max-width: 9rem; /* El logo no será más ancho que 100px */
+  height: auto; /* Mantiene la proporción */
+}
+
+nav {
+  display: grid;
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente si es necesario */
+  height: 100px; /* Ajusta según el diseño */
+  margin-left: 20rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  text-align: center;
   justify-content: center;
 }
 
-.card {
-  width: 300px;
-  background: #fff;
+nav ul li a {
+  display: block;
+
+  text-decoration: none;
+  padding: -0px 15px; /* Reducimos el padding */
+  color: #000000;
+  align-items: center;
+
+  transition: background-color 0.3s;
+}
+
+.Button1 {
+  display: inline-block;
+  padding: 10px 15px;
+  font-weight: 750;
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: rgba(255, 255, 255, 0.795);
+  margin-inline-start: 15rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 10rem;
+  background-color: rgba(9, 145, 145, 0.952);
+  border: 2px solid #000000; /* Grosor, estilo y color */
+}
+
+.Button1:hover {
+  background-color: #030303;
+}
+
+.Button2 {
+  display: grid;
+  padding: 10px 15px;
+  font-weight: 750;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+  color: rgba(255, 255, 255, 0.795);
+  text-decoration: none;
+  border-radius: 10rem;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(9, 145, 145, 0.952);
+  border: 2px solid #000000; /* Grosor, estilo y color */
+}
+
+.Button2:hover {
+  background-color: #030303;
+}
+
+.product-card {
+  width: 300px; /* Ancho del contenedor */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  overflow: hidden; /* Recorta contenido fuera de los bordes redondeados */
+  text-align: center; /* Centra el texto */
+  font-family: Arial, sans-serif; /* Fuente del texto */
+  margin: 20px; /* Espaciado alrededor del contenedor */
+}
+
+.product-image {
+  width: 100%; /* Imagen ocupa todo el ancho */
+  height: auto; /* Mantiene la proporción */
+}
+
+.product-title {
+  font-size: 1.5em; /* Tamaño del título */
+  margin: 10px 0; /* Espaciado superior e inferior */
+  color: #333; /* Color del texto */
+}
+
+.buy-button {
+  background-color: #007bff; /* Azul brillante */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Relleno interno */
+  font-size: 1em; /* Tamaño del texto */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Animación de transición */
+}
+
+.buy-button:hover {
+  background-color: #0056b3; /* Oscurece el azul al pasar el ratón */
+}
+
+.product-row {
+  display: flex; /* Activa Flexbox */
+  gap: 20px; /* Espaciado entre los contenedores */
+  justify-content: center; /* Centra los contenedores horizontalmente */
+  flex-wrap: wrap; /* Permite que los elementos salten a la siguiente línea si es necesario */
+  padding: 20px; /* Espaciado interno del contenedor principal */
+}
+
+.product-card {
+  width: 300px; /* Tamaño fijo de cada tarjeta */
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.card:hover {
-  transform: scale(1.05);
+#Principal {
+  background-image: url(img/Bluley\ logo.jpg);
+
+  font-size: 18px;
+  filter: brightness (80%);
+  background-size: cover;
 }
 
-.card-image {
+#hero {
+  min-height: 100hv;
+  position: relative;
+}
+
+video {
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 200px;
+  height: 20%;
   object-fit: cover;
 }
 
-.card-header {
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card-header h2 {
-  font-size: 1.2em;
-  margin: 0;
-}
-
-.toggle-btn {
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: background 0.3s ease;
-}
-
-.toggle-btn:hover {
-  background: #0056b3;
-}
-
-.card-description {
-  padding: 15px;
-  display: none; /* Oculto por defecto */
-  background-color: #f9f9f9;
-  border-top: 1px solid #ddd;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.capa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1c1c1d;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
 }

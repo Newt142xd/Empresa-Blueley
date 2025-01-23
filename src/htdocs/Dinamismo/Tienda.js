@@ -131,16 +131,42 @@ const showHTML = () => {
   countProducts.innerText = totalOfProducts;
 };
 
-// Selecciona el botón de hamburguesa y el sidebar
+// Elementos del DOM
 const hamburgerBtn = document.getElementById("hamburger-btn");
+const closeBtn = document.getElementById("close-btn");
 const sidebar = document.getElementById("sidebar");
-const mainContent = document.querySelector(".main-content");
+const submenuLinks = document.querySelectorAll(".menu > li > a");
 
-// Evento para abrir/cerrar el sidebar
+// Abrir el sidebar
 hamburgerBtn.addEventListener("click", () => {
-  // Alterna la clase 'open' en el sidebar
-  sidebar.classList.toggle("open");
+  sidebar.classList.add("open");
+});
 
-  // Alterna la clase 'shift' en el contenido principal
-  mainContent.classList.toggle("shift");
+// Abrir el sidebar y ocultar el botón de hamburguesa
+hamburgerBtn.addEventListener("click", () => {
+  sidebar.classList.add("open");
+  hamburgerBtn.style.display = "none"; // Ocultar el botón
+});
+
+// Cerrar el sidebar y mostrar el botón de hamburguesa
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("open");
+  hamburgerBtn.style.display = "block"; // Mostrar el botón
+});
+
+// Cerrar el sidebar
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("open");
+});
+
+// Alternar submenús
+submenuLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const submenu = link.nextElementSibling;
+    if (submenu && submenu.classList.contains("submenu")) {
+      submenu.style.display =
+        submenu.style.display === "block" ? "none" : "block";
+    }
+  });
 });

@@ -11,6 +11,7 @@
       media="screen"
       href="Estilos/Registrarse.css"
     />
+    <link rel="icon" href="img/Bluley logo.jpg" />
   </head>
   <body>
     <div class="Fondo">
@@ -64,8 +65,8 @@
       </div>
     </div>
     <script>
-      const form = document.getElementById('loginForm');
-      form.addEventListener('submit', async (event) => {
+      const form = document.getElementById("loginForm");
+      form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         const formData = {
@@ -76,22 +77,23 @@
         };
 
         try {
-          const response = await fetch('http://127.0.0.1:5000/registro', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+          const response = await fetch("http://127.0.0.1:5000/registro", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
           });
 
           const result = await response.json();
           if (result.success) {
-            alert('Usuario registrado exitosamente');
+            alert("Usuario registrado exitosamente");
             form.reset();
           } else {
-            document.getElementById('error-message').textContent = result.message;
+            document.getElementById("error-message").textContent =
+              result.message;
           }
         } catch (error) {
-          document.getElementById('error-message').textContent =
-            'Error al registrar el usuario';
+          document.getElementById("error-message").textContent =
+            "Error al registrar el usuario";
         }
       });
     </script>

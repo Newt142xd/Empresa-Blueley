@@ -16,107 +16,32 @@
   </head>
   <body>
    
+   <!-- Cabecera -->
+   <header class="Cabecera">
+    <a href="#" class="logo"> <img src="img/Bluley logo.jpg" /></a>
+    <nav>
+      <ul>
+        <li>
+          <a href="Index.html" class="link">Inicio</a>
+        </li>
 
-    <h1>Cards con Descripción Desplegable</h1>
-    <div class="card-container">
-        <!-- Card 1 -->
-        <div class="card">
-            <img src="imagen1.jpg" alt="Imagen 1" class="card-image">
-            <div class="card-header">
-                <h2>Card 1</h2>
-                <button class="toggle-btn">Ver más</button>
-            </div>
-            <div class="card-description">
-                <p>Esta es la descripción desplegable de la tarjeta 1. Aquí puedes incluir detalles adicionales.</p>
-            </div>
-        </div>
+        <li><a href="Tienda.html">Tienda</a></li>
+        <li><a href="">Contacto</a></li>
+      </ul>
+    </nav>
 
-        <!-- Card 2 -->
-        <div class="card">
-            <img src="imagen2.jpg" alt="Imagen 2" class="card-image">
-            <div class="card-header">
-                <h2>Card 2</h2>
-                <button class="toggle-btn">Ver más</button>
-            </div>
-            <div class="card-description">
-                <p>Esta es la descripción desplegable de la tarjeta 2. Agrega información específica aquí.</p>
-            </div>
-        </div>
-    </div>
+    <a href="Registrarse.html" class="Button1">Registrarse</a>
+    <a href="InicioSecion.html" class="Button2">Iniciar Sesion</a>
+  </header>
 
+  <video muted autoplay loop>
+    <source
+      src="Video/coverr-putting-makeup-on-3918-1080p.mp4"
+      type="video/mp4"
+    />
+  </video>
+ 
 
-    <title>Filtro de Categorías</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .categories {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .categories button {
-            padding: 10px;
-            border: none;
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-        }
-        .categories button.active {
-            background-color: #555;
-        }
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .product {
-            width: 200px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            text-align: center;
-            display: none; /* Por defecto, oculto */
-        }
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
-</head>
-<body>
-    <h1>Productos</h1>
-
-    <!-- Categorías -->
-    <div class="categories">
-        <button data-category="all" class="active">Todos</button>
-        <button data-category="electronics">Electrónica</button>
-        <button data-category="clothing">Ropa</button>
-        <button data-category="books">Libros</button>
-    </div>
-
-    <!-- Productos -->
-    <div class="products">
-        <div class="product" data-category="electronics">
-            <img src="tv.jpg" alt="Televisor">
-            <p>Televisor</p>
-        </div>
-        <div class="product" data-category="clothing">
-            <img src="shirt.jpg" alt="Camiseta">
-            <p>Camiseta</p>
-        </div>
-        <div class="product" data-category="books">
-            <img src="book.jpg" alt="Libro">
-            <p>Libro</p>
-        </div>
-        <div class="product" data-category="electronics">
-            <img src="phone.jpg" alt="Teléfono">
-            <p>Teléfono</p>
-        </div>
-        <div class="product" data-category="clothing">
-            <img src="pants.jpg" alt="Pantalones">
-            <p>Pantalones</p>
-        </div>
-    </div>
     </section>
     <script src="Dinamismo/Contacto.js"> </script>
   </body>

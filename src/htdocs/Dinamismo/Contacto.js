@@ -1,21 +1,27 @@
-// Seleccionar todos los botones de las cards
-const toggleButtons = document.querySelectorAll(".toggle-btn");
+// Elementos del DOM
+const hamburgerBtn = document.getElementById("hamburger-btn");
+const closeBtn = document.getElementById("close-btn");
+const sidebar = document.getElementById("sidebar");
+const submenuLinks = document.querySelectorAll(".menu > li > a");
 
-// Agregar evento a cada botón
-toggleButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    // Encontrar la descripción asociada al botón
-    const cardDescription = button
-      .closest(".card")
-      .querySelector(".card-description");
+// Abrir el sidebar
+hamburgerBtn.addEventListener("click", () => {
+  sidebar.classList.add("open");
+});
 
-    // Alternar visibilidad de la descripción
-    if (cardDescription.style.display === "block") {
-      cardDescription.style.display = "none";
-      button.textContent = "Ver más"; // Cambiar texto del botón
-    } else {
-      cardDescription.style.display = "block";
-      button.textContent = "Ver menos"; // Cambiar texto del botón
+// Cerrar el sidebar
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("open");
+});
+
+// Alternar submenús
+submenuLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const submenu = link.nextElementSibling;
+    if (submenu && submenu.classList.contains("submenu")) {
+      submenu.style.display =
+        submenu.style.display === "block" ? "none" : "block";
     }
   });
 });
